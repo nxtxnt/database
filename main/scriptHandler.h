@@ -1,6 +1,6 @@
 #ifndef SCRIPT_HANDER_HEADER
 #define SCRIPT_HANDER_HEADER
 
-int scriptHander();
+int scriptHander(char *fileName);
 
 #endif
