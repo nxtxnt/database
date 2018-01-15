@@ -1,4 +1,5 @@
 #include "../main/global.h"
+#include "scriptHandler.h"
 
 #ifndef LOAD_HEADER
 #define LOAD_HEADER
