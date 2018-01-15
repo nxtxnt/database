@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
     if((loadDataBase(argv[argc], script = TRUE) < 0)
        return FAILURE;
   else
-    if(loadDatabase() < 0)
+    if(loadDatabase('\0', script = FALSE) < 0)
        return FAILURE;
 }
     
