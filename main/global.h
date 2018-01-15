@@ -18,3 +18,14 @@ int error(int err_arg);
 
 #define TOO_MANY_ARG -1
 #define SCRIPT_MISSING -2
+
+#ifndef FILE_STRUCT
+#define FILE_STRUCT
+#define LINE_NUM 100000
+struct file {
+  int desc;
+  int size;
+  int linePos[LINE_NUM];
+}
+
+#endif
