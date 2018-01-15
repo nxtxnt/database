@@ -7,6 +7,9 @@ int loadDatabase(char *scriptFile, bool script) {
     return FAILURE;
   if(getDtbSize() < 0)
     return FAILURE;
+  if(getLinePos() < 0)
+    return FAILURE;
+  
 }
 
 int chkIfDtb() {
