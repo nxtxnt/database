@@ -2,3 +2,4 @@
 #include "global.h"
 
 int scriptHandler(char *fileName) {
+}
