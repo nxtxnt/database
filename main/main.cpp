@@ -3,5 +3,7 @@ int main(int argc, char *argv[]) {
     error(TOO_MANY_ARG);
   if(argc == 2)
     scriptHandler(argv[argc]);
-    
+  else
+    loadDatabase();
+}
     
