@@ -38,4 +38,16 @@ int getDtbSize() {
 }
 
 int getLinesPos() {
+  char cbuf;
+  int line(0);
+  dtb.linePos[0] = 0;
+  line++;
+  for(int i = 1; i < dtb.size; i++) {
+    if((read(dtb.desc, &cbuf, sizeof(cbuf)) < 0)
+       return FAILURE;
+    if(cbuf == '\n') {
+      linePos[line];
+      line++;
+    }
+  }
 }
