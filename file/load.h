@@ -1,6 +1,12 @@
 #ifndef LOAD_HEADER
 #define LOAD_HEADER
 
-int loadDatabase(char *scriptFile, bool script);
+#define DATABASE_FILENAME "database.dat"
+
+int loadDtb(char *scriptFile, bool script);
+int chkIfDtb();
+int mkDtb();
+int getDtbSize();
+int getLinesPos();
 
 #endif
