@@ -1,3 +1,5 @@
+#include "../main/global.h"
+
 #ifndef LOAD_HEADER
 #define LOAD_HEADER
 
