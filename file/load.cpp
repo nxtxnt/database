@@ -12,7 +12,7 @@ int loadDatabase(char *scriptFile, bool script) {
   if(script == TRUE)
     scriptHandler(scriptFile);
   else
-    shell();
+    shell(&dtb);
 }
 
 int chkIfDtb() {
