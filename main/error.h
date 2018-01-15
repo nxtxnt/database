@@ -1,7 +1,9 @@
+#include <unistd.h>
+
 #ifndef ERROR_HEADER
 #define ERROR_HEADER
 
-int error(char *err_arg);
+int error(int err_arg);
 
 #endif
 
