@@ -1,4 +1,4 @@
 #include "scriptHandler.h"
 
-int scriptHandler(char *fileName) {
+int scriptHander(char *fileName, struct file &dtb) {
 }
