@@ -1,6 +1,6 @@
 #include "load.h"
 
-file dtb;
+struct file dtb;
 
 int loadDatabase(char *scriptFile, bool script) {
   if(chkIfDtb() < 0)
