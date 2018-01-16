@@ -10,7 +10,7 @@ int loadDatabase(char *scriptFile, bool script) {
   if(getLinePos() < 0)
     return FAILURE;
   if(script == TRUE)
-    scriptHandler(scriptFile);
+    scriptHandler(scriptFile, &dtb);
   else
     shell(&dtb);
 }
