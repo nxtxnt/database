@@ -18,7 +18,7 @@ int loadDatabase(char *scriptFile, bool script) {
 int chkIfDtb() {
   int fd;
   if((fd = open(DATABASE_FILENAME, O_RDONLY)) < 0)
-     if(mkDtb() < 0)
+     if(mkDtb() < 0) {
         return FAILURE;
   else
      dtb.desc = fd;
@@ -26,8 +26,10 @@ int chkIfDtb() {
 
 int mkDtb() {
   int fd;
-  if((fd = open(DATABASE_FILENAME, O_RDONLY)) < 0)
+  if((fd = open(DATABASE_FILENAME, O_RDONLY)) < 0) {
+    error(ERROR_MAKING_DATABASE);
     return FAILURE;
+  }
   else
     for(int i = 0; i < LINE_NUM; i++)
       write(fd, '\n', 1);
