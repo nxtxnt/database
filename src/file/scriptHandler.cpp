@@ -8,7 +8,7 @@ int scriptHander(char *fileName, struct file &dtb) {
   if((fd = open(filename, O_RDONLY)) < 0)
     error(NULL);
   int i = 0;
-  while(checkIfChar < 0)
+  while(!(checkIfChar < 0))
     checkIfChar = read(fd, *bufC, 1);
     if(bufC == '\n') {
       i = 0;
