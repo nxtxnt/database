@@ -9,10 +9,18 @@ int loadDatabase(char *scriptFile, bool script) {
     return FAILURE;
   if(getLinePos() < 0)
     return FAILURE;
-  if(script == TRUE)
-    scriptHandler(scriptFile, &dtb);
-  else
-    shell(&dtb);
+  if(script == TRUE) {
+    if(scriptHandler(scriptFile, &dtb) < 0)
+      return FAILURE;
+    else
+      return SUCCESS;
+  }
+  else {
+    if(shell(&dtb) < 0)
+      return FAILURE;
+    else
+      return SUCCESS;
+  }
 }
 
 int chkIfDtb() {
