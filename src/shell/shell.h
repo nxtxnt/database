@@ -3,7 +3,7 @@
 #ifndef SHELL_HEADER
 #define SHELL_HEADER
 
-int shell(file &dtb);
+int shell(struct file &dtb);
 
 int input(char *line[]);
 int clearCArray(char *c);
@@ -13,7 +13,7 @@ int clearCArray(char *c);
 #ifndef LINE_FUNCTIONS
 #define LINE_FUNCTIONS
 
-int lineInterpreter(char *line);
+int lineInterpreter(char *line, strut file &dtb);
 
 char *instruction[9] = {"ADD_LINE", "ADD_ATTR", "ADD_OBJECT", "SET", "IN_LINE", "IN_OBJ", "REM_LINE", "REM_ATTR", "REM_OBJ"};
 
