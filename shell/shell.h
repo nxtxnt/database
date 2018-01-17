@@ -5,4 +5,6 @@
 
 int shell(file &dtb);
 
+int input(char *line[]);
+
 #endif
