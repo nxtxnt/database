@@ -22,7 +22,6 @@ int error(int err_arg);
 
 #endif
 
-
 #ifndef FILE_STRUCT
 #define FILE_STRUCT
 
