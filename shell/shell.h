@@ -6,5 +6,6 @@
 int shell(file &dtb);
 
 int input(char *line[]);
+int clearCArray(char *c);
 
 #endif
