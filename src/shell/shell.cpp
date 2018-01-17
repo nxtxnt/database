@@ -1,7 +1,11 @@
 #include "shell.h"
 
 int shell(file &dtb) {
-
+  char *line;
+  while(line != "END") {
+    write(STDOUT, ">>> ", 5);
+    input(&line);
+  }
 }
 
 int input(char *line[]) {
