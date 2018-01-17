@@ -1,7 +1,7 @@
 #ifdef _MINGW32_
-  #define STDIN 1
+  #define STDOUT 1
 #ifdef _linux_
-  #define STDIN 0
+  #define STDOUT 0
 
 #include <unistd.h>
 #include <fcntl.h>
