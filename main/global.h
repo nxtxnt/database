@@ -12,12 +12,16 @@
 #ifndef ERROR_HEADER
 #define ERROR_HEADER
 
+#define TOO_MANY_ARG -1
+#define SCRIPT_MISSING -2
+#define ERROR_MAKING_DATABASE -3
+#define FSEEK_ERROR  -4
+#define FREAD_ERROR -5
+
 int error(int err_arg);
 
 #endif
 
-#define TOO_MANY_ARG -1
-#define SCRIPT_MISSING -2
 
 #ifndef FILE_STRUCT
 #define FILE_STRUCT
