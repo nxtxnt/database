@@ -18,7 +18,7 @@ int loadDatabase(char *scriptFile, bool script) {
 int chkIfDtb() {
   int fd;
   if((fd = open(DATABASE_FILENAME, O_RDONLY)) < 0)
-     if(mkDtb() < 0) {
+     if(mkDtb() < 0)
         return FAILURE;
   else
      dtb.desc = fd;
@@ -33,16 +33,24 @@ int mkDtb() {
   else
     for(int i = 0; i < LINE_NUM; i++)
       write(fd, '\n', 1);
+  return SUCCESS
 }
 
 int getDtbSize() {
-  if(lseek(dtb.fd, 0, SEEK_END) < 0)
+  if(lseek(dtb.fd, 0, SEEK_END) < 0) {
+    error(FSEEK_ERROR);
     return FAILURE;
+  }
   int size;
-  if((size = read(dtb.fd, 0, SEEK_CUR)) < 0)
+  if((size = read(dtb.fd, 0, SEEK_CUR)) < 0) {
     return FAILURE;
-  else
+    error(FREAD_ERROR);
+  }
+  else {
     dtb.size = size;
+    lseek(dtb.fd, -size, SEEK_END);
+    return SUCCESS;
+  }
 }
 
 int getLinesPos() {
@@ -51,11 +59,14 @@ int getLinesPos() {
   dtb.linePos[0] = 0;
   line++;
   for(int i = 1; i < dtb.size; i++) {
-    if((read(dtb.desc, &cbuf, sizeof(cbuf)) < 0)
+    if((read(dtb.desc, &cbuf, sizeof(cbuf)) < 0) {
+       error(FREAD_ERROR);
        return FAILURE;
+    }
     if(cbuf == '\n') {
       linePos[line];
       line++;
     }
   }
+  return SUCCESS;
 }
