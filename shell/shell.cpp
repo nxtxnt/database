@@ -5,6 +5,7 @@ int shell(file &dtb) {
 }
 
 int input(char *line[]) {
+  clearCArray(&line);
   char buf(0);
   for(int i = 0; buf != '\n'; i++) {
     if(read(STDIN, *buf, 1) < 0) {
@@ -16,4 +17,7 @@ int input(char *line[]) {
   return SUCCESS;
 }
 
-  
+int clearCArray(char *c) {
+  for(int i = 0; i < sizeof(c); i++)
+    c[i] = NULL;
+}
