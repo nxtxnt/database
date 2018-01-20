@@ -22,7 +22,7 @@ int buffer(int *lineName, int endRead, char *buffer[], struct file *dtb) {
     case dtb->size :
       end = dtb->size;
     default :
-      end = dtb->linePos[endRead];
+      end = dtb->linePos[endRead]-1;
   }
   if((read(dtb->desc, *buffer, (end) - (hashFunction(lineName))) < 0)
      error(ERROR_READING_FILE);
