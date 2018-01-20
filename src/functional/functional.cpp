@@ -30,6 +30,16 @@ int buffer(int *lineName, int endRead, char *buffer[], struct file *dtb) {
   }
 }
 
-int erase(int *lineName, struct file *dtb);
+int erase(int *lineName, struct file *dtb) {
+  char null = '\0';
+  for(int i = 0; i < (dtb->size) - (hashFunction(lineName)); i++)
+    if((write(dtb.desc, *null, sizeof(null))) < 0) {
+      error(ERROR_WRITING_TO_FILE);
+      return FAILURE;
+    }
+  }
+  return SUCCESS;
+}
+     
 int writeInFile(char *line, char *buffer, struct file *dtb);
 void updateStruct(struct file *dtb, int newLineSize);
