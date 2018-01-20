@@ -2,12 +2,18 @@
 
 int addLine(char *lineName, char *line, struct file &dtb) {
   char *buffer;
-  seekLine(lineName, &dtb);
-  buffer(lineName, &buffer, &dtb);
-  seekLine(lineName, &dtb);
-  erase(lineName, &dtb);
-  seekLine(lineName, &dtb);
-  writeInFile(line, buffer, &dtb);
+  if((seekLine(lineName, &dtb))) < 0)
+    return FAILURE;
+  if((buffer(lineName, &buffer, &dtb))) < 0)
+    return FAILURE;
+  if((seekLine(lineName, &dtb))) < 0)
+    return FAILURE;
+  if((erase(lineName, &dtb))) < 0)
+    return FAILURE;
+  if((seekLine(lineName, &dtb))) < 0)
+    return FAILURE;
+  if((writeInFile(line, buffer, &dtb))) < 0)
+    return FAILURE;
   updateStruct(&dtb, sizeof(line));
   clearArray(&buffer);
 }
