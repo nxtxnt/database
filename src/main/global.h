@@ -35,3 +35,10 @@ struct file {
 };
 
 #endif
+
+#ifndef INPUT
+#define INPUT
+
+int input(char *in[]);
+
+#endif
