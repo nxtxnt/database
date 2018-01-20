@@ -6,7 +6,7 @@
 int shell(struct file &dtb);
 
 int input(char *line[]);
-int clearCArray(char *c);
+void clearCArray(char *c);
 
 #endif
 
