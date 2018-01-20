@@ -21,7 +21,6 @@ int input(char *line[]) {
   return SUCCESS;
 }
 
-int clearCArray(char *c) {
-  for(int i = 0; i < sizeof(c); i++)
-    c[i] = NULL;
+void clearCArray(char *c) {
+  c[0] = "\0";
 }
