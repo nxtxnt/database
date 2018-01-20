@@ -55,8 +55,9 @@ int writeInFile(char *line, char *buffer, struct file *dtb) {
 }
 
 void updateStruct(struct file *dtb, char *line, int newLineSize) {
+  dtb->size += newLineSize - dtb->linePos[hashFunction(line)];
   for(int i = dtb->linePos[hashFunction(line)+1]; i < LINE_NUM; i++)
-    dtb->linePos[i] += newLineSize; 
+    dtb->linePos[i] += newLineSize;
 }
 
 void clearArray(char *array[]) {
