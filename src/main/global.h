@@ -17,6 +17,7 @@
 #define ERROR_MAKING_DATABASE -3
 #define FSEEK_ERROR  -4
 #define FREAD_ERROR -5
+#define WRITE_ERROR -6
 
 int error(int err_arg);
 
